@@ -12,9 +12,15 @@ const getUsuario = async (req, res) => {
     }
 };
 
-const saveUsuario = ((req, res) => {
-    res.send("Guarda un usuario");
-});
+const saveUsuario = async (req, res) => {
+    try {
+        const { nombre, password, email, activo } = req.body;
+        await pool.query('INSERT INTO USUARIO(NOMBRE, PASSWORD, EMAIL, ACTIVO) VALUES($1, $2, $3, True)', [nombre, password, email]);
+        res.send("Usuario guardado correctamente!");
+    } catch (e) {
+        console.log(e);
+    }
+};
 
 const updateUsuario = async (req, res) => {
     try {
