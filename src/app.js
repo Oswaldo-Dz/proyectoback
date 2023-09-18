@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/adios', (req, res) => {
-    res.send('ADIOS AMOR, ME VOY DE TI Y ESTA VEZ PARA SIEMPRE...');
+    res.send('BYE');
 });
 
 
