@@ -13,7 +13,7 @@ import {
 router.get('/listUsuario', listUsuario);
 router.get('/:id', getUsuario);
 router.put('/update/:id', updateUsuario);
-router.post('/', saveUsuario);
-router.delete('/:id', deleteUsuario);
+router.post('/saveUsuario', saveUsuario);
+router.delete('/deleteUsuario/:id', deleteUsuario);
 
 export default router;

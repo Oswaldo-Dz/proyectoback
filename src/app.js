@@ -1,9 +1,11 @@
 import express from 'express';
+import cors from 'cors';
 import usuarioRuta from '../src/Routes/usuarioRuta.js';
 
 const app = express();
-app.use(express.json());
 
+app.use(express.json());
+app.use(cors());
 const port = 5002 || process.env.port;
 
 app.use('/api', usuarioRuta);
